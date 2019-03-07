@@ -22,6 +22,7 @@ class MapViewController: UIViewController,MAMapViewDelegate,MapActionProtocals {
         mapView.frame = self.view.bounds;
         self.view.addSubview(mapView)
         mapView.showsUserLocation = true
+        mapView.isRotateEnabled = false
         mapView.userTrackingMode = .follow
         mapView.showsCompass = false
         mapView.delegate = self
