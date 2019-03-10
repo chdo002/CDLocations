@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, SearchViewProtocal {
+class ViewController: UIViewController, MapViewProtocal, SearchViewProtocal, LocateViewProtocal {
 
     let mapVc = MapViewController()
     let searchVc = SearchViewController()
     let locateVc = LocateViewController()
+    let locateInfoVc = LocationInfoViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,17 @@ class ViewController: UIViewController, SearchViewProtocal {
         }
     }
     
-    // MapActionProtocal
+    func showLocationInfo(_ vm: LJAnnotaionVM){
+        // 定位视图
+        addChild(locateInfoVc)
+//        locateInfoVc.delegate = self
+        view.addSubview(locateInfoVc.view)
+        locateInfoVc.view.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    //MARK: - MapActionProtocal
     
     func selectLocation(_ vm: LJAnnotaionVM, from: AnyObject) {
         
@@ -62,8 +73,25 @@ class ViewController: UIViewController, SearchViewProtocal {
         } else if from.isKind(of: LocateViewController.self) {
             // 定位
             self.mapVc.moveToAnnotation(vm)
+        } else if from.isKind(of: MapViewController.self) {
+            // 地图
+            showLocationInfo(vm)
         }
     }
     
+    //MARK: -LocateViewProtocal
+    
+    func tappedPinButton(_ from: AnyObject) {
+        
+        self.mapVc.removeAllAnnotation()
+        
+        for item in DBService.searchAllLJPoints() {
+            let _ = self.mapVc.addAnnotation(anno: item)
+        }
+    }
+    
+    func tappedCleanButton(_ from: AnyObject) {
+        self.mapVc.removeAllAnnotation()
+    }
     
 }

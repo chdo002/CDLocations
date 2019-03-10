@@ -27,6 +27,7 @@
 		E9289A04222CD85D000E25FE /* LJObjDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899FB222CD85D000E25FE /* LJObjDBModel.swift */; };
 		E9289A05222CD85D000E25FE /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899FC222CD85D000E25FE /* DBService.swift */; };
 		E96679F12234C27000BAC7C4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96679F02234C27000BAC7C4 /* Tools.swift */; };
+		E96679F4223558BA00BAC7C4 /* LocationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96679F3223558BA00BAC7C4 /* LocationInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E92899FB222CD85D000E25FE /* LJObjDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJObjDBModel.swift; sourceTree = "<group>"; };
 		E92899FC222CD85D000E25FE /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		E96679F02234C27000BAC7C4 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		E96679F3223558BA00BAC7C4 /* LocationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewController.swift; sourceTree = "<group>"; };
 		F4B21A063A45C2F505D9AC9E /* Pods_LJL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 				E92899F4222CD85D000E25FE /* SearchViewController.swift */,
 				E92899F7222CD85D000E25FE /* AddressTableViewController.swift */,
 				E904374F222D72E7005DC478 /* LocateViewController.swift */,
+				E96679F3223558BA00BAC7C4 /* LocationInfoViewController.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				E96679F12234C27000BAC7C4 /* Tools.swift in Sources */,
 				E904374E222D6CBB005DC478 /* LocationManger.swift in Sources */,
 				E9289A04222CD85D000E25FE /* LJObjDBModel.swift in Sources */,
+				E96679F4223558BA00BAC7C4 /* LocationInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

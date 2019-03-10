@@ -9,12 +9,12 @@
 import UIKit
 import SnapKit
 
-protocol SearchViewProtocal: MapActionProtocal {
+protocol SearchViewProtocal: BaseMapActionProtocal {
     
 }
 
 /// 搜索视图
-class SearchViewController: UIViewController, UITextFieldDelegate, MapActionProtocal {
+class SearchViewController: UIViewController, UITextFieldDelegate, BaseMapActionProtocal {
     
     // MARK: - MapActionProtocalsDelegate
     var delegate: SearchViewProtocal?

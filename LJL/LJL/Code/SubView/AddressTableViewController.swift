@@ -13,7 +13,7 @@ class LocationTableViewController: UITableViewController {
 
     var locations = [LJAnnotaionVM]()
     
-    var delegate: MapActionProtocal?
+    var delegate: BaseMapActionProtocal?
     
     override func viewDidLoad() {
         super.viewDidLoad()

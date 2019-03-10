@@ -8,12 +8,16 @@
 
 import UIKit
 
+protocol MapViewProtocal: BaseMapActionProtocal {
+    
+}
+
 /// 地图视图
 class MapViewController: UIViewController,MAMapViewDelegate {
     
     // MARK: - MapActionProtocals
     
-    var delegate: MapActionProtocal?
+    var delegate: MapViewProtocal?
     
     private let mapView = MAMapView()
     
@@ -76,10 +80,26 @@ class MapViewController: UIViewController,MAMapViewDelegate {
     }
     
     func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
-        
+        if let annotation = view.annotation as? LJAnnotaionVM {
+            self.delegate?.selectLocation(annotation, from: self)
+        }
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MAMapView!) {
         
     }
+    
+//    // 自定义标注图标
+//    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+//        if annotation.isKind(of: MAPointAnnotation.self) {
+//            let reuseId = "cell"
+//            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+//            if annotationView == nil {
+//                annotationView = MAAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//            }
+//            annotationView?.image = UIImage(named: "target-lock")
+//            return annotationView
+//        }
+//        return nil
+//    }
 }

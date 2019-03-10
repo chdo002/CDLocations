@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MapActionProtocal: NSObjectProtocol {
+protocol BaseMapActionProtocal: NSObjectProtocol {
     
     func selectLocation(_ vm: LJAnnotaionVM, from: AnyObject)
     
