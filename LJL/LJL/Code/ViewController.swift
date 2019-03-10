@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SearchViewProtocal {
 
     let mapVc = MapViewController()
     let searchVc = SearchViewController()
@@ -16,11 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initUI()
-        
-        addConnecgtions()
-        
     }
     
     func initUI() {
@@ -29,6 +25,7 @@ class ViewController: UIViewController {
         
         // 地图视图
         addChild(mapVc)
+        mapVc.delegate = self;
         view.addSubview(mapVc.view)
         mapVc.view.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -37,6 +34,7 @@ class ViewController: UIViewController {
         
         // 搜索视图
         addChild(searchVc)
+        searchVc.delegate = self
         view.addSubview(searchVc.view)
         searchVc.view.snp.makeConstraints { (make) in
             make.leading.top.trailing.equalToSuperview()
@@ -45,23 +43,27 @@ class ViewController: UIViewController {
         
         // 定位视图
         addChild(locateVc)
+        locateVc.delegate = self
         view.addSubview(locateVc.view)
         locateVc.view.snp.makeConstraints { (make) in
-            make.leading.bottom.trailing.equalToSuperview()
+            make.trailing.bottom.equalToSuperview()
         }
-        
     }
     
-    func addConnecgtions(){
+    // MapActionProtocal
+    
+    func selectLocation(_ vm: LJAnnotaionVM, from: AnyObject) {
         
-//        mapVc.selectLocationHandler = { [weak self] (vm: LJAnnotaionVM) -> Void in
-//            
-//        }
-        
-        searchVc.selectLocationHandler = { [weak self] (vm: LJAnnotaionVM) -> Void in
-            let _ = self?.mapVc.addAnnotation(anno: vm, to: (self?.mapVc.mapView)!)
+        if from.isKind(of: SearchViewController.self) {
+            // 搜索
+            self.mapVc.removeAllAnnotation()
+            let _ = self.mapVc.addAnnotation(anno: vm)
+            self.mapVc.moveToAnnotation(vm)
+        } else if from.isKind(of: LocateViewController.self) {
+            // 定位
+            self.mapVc.moveToAnnotation(vm)
         }
     }
-
+    
+    
 }
-

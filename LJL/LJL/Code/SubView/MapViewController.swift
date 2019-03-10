@@ -9,12 +9,13 @@
 import UIKit
 
 /// 地图视图
-class MapViewController: UIViewController,MAMapViewDelegate,MapActionProtocals {
+class MapViewController: UIViewController,MAMapViewDelegate {
     
     // MARK: - MapActionProtocals
-    var selectLocationHandler: ((LJAnnotaionVM) -> Void)?
     
-    let mapView = MAMapView()
+    var delegate: MapActionProtocal?
+    
+    private let mapView = MAMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +27,23 @@ class MapViewController: UIViewController,MAMapViewDelegate,MapActionProtocals {
         mapView.userTrackingMode = .follow
         mapView.showsCompass = false
         mapView.delegate = self
-        
     }
     
+    // MARK:- 接口
+    
+    /// 移除所有的图标
+    func removeAllAnnotation(){
+        mapView.removeAnnotations(mapView.annotations)
+    }
 
-    @objc func addAnnotation(anno annotation: LJAnnotaionVM, to map: MAMapView) -> LJAnnotaionVM{
-        map.addAnnotation(annotation)
+    // 添加图标
+    @objc func addAnnotation(anno annotation: LJAnnotaionVM) -> LJAnnotaionVM{
+        mapView.addAnnotation(annotation)
         return annotation
     }
     
-    @objc func addCoordinate(cor coordinate: CLLocationCoordinate2D, to map: MAMapView) -> LJAnnotaionVM{
+    // 通过坐标添加图标
+    @objc func __addCoordinate(cor coordinate: CLLocationCoordinate2D) -> LJAnnotaionVM{
         let pointAnnotation = LJAnnotaionVM()
         pointAnnotation.coordinate = coordinate
         
@@ -48,10 +56,20 @@ class MapViewController: UIViewController,MAMapViewDelegate,MapActionProtocals {
         
         pointdbModel.ljModel = ljdbModel
         pointAnnotation.dbModel = pointdbModel
-        return addAnnotation(anno: pointAnnotation, to: map)
+        return addAnnotation(anno: pointAnnotation)
+    }
+    
+    // 移动到指定点
+    func moveToAnnotation(_ annotation: LJAnnotaionVM){
+        mapView.setCenter(annotation.coordinate, animated: true)
+        mapView.setZoomLevel(17, animated: true)
     }
     
     // MARKL - MAMapViewDelegate
+    
+    func mapView(_ mapView: MAMapView!, didLongPressedAt coordinate: CLLocationCoordinate2D) {
+        
+    }
     
     func mapView(_ mapView: MAMapView!, didSingleTappedAt coordinate: CLLocationCoordinate2D) {
         

@@ -24,7 +24,7 @@ class LJAnnotaionVM: MAPointAnnotation {
     {
         willSet {
             if let new = newValue {
-                coordinate = CLLocationCoordinate2DMake(new.latitude ?? 0, new.latitude ?? 0)
+                coordinate = CLLocationCoordinate2DMake(new.latitude, new.latitude)
             }
         }
     }

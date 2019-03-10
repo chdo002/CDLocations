@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 import Realm
 
-class AnnotationDBModel: RLMObject {
-    var latitude: Double?
-    var longitude: Double?
-    var ljModel: LJObjDBModel?
+class AnnotationDBModel: Object {
+     @objc var latitude: Double = 0
+     @objc var longitude: Double = 0
+     var tags:List <String> = List <String>()
+     @objc var ljModel: LJObjDBModel?
 }

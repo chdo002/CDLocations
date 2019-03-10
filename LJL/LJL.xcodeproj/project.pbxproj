@@ -17,7 +17,7 @@
 		E928997D222CCDD0000E25FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E928997B222CCDD0000E25FE /* LaunchScreen.storyboard */; };
 		E9289988222CCDD1000E25FE /* LJLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9289987222CCDD1000E25FE /* LJLTests.swift */; };
 		E9289993222CCDD1000E25FE /* LJLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9289992222CCDD1000E25FE /* LJLUITests.swift */; };
-		E92899FD222CD85D000E25FE /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899F0222CD85D000E25FE /* SearchAPI.swift */; };
+		E92899FD222CD85D000E25FE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899F0222CD85D000E25FE /* APIService.swift */; };
 		E92899FE222CD85D000E25FE /* LJAnnotaionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899F2222CD85D000E25FE /* LJAnnotaionVM.swift */; };
 		E92899FF222CD85D000E25FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899F4222CD85D000E25FE /* SearchViewController.swift */; };
 		E9289A00222CD85D000E25FE /* Protocals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899F5222CD85D000E25FE /* Protocals.swift */; };
@@ -25,7 +25,8 @@
 		E9289A02222CD85D000E25FE /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899F7222CD85D000E25FE /* AddressTableViewController.swift */; };
 		E9289A03222CD85D000E25FE /* AnnotationDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899FA222CD85D000E25FE /* AnnotationDBModel.swift */; };
 		E9289A04222CD85D000E25FE /* LJObjDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899FB222CD85D000E25FE /* LJObjDBModel.swift */; };
-		E9289A05222CD85D000E25FE /* SearchDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899FC222CD85D000E25FE /* SearchDB.swift */; };
+		E9289A05222CD85D000E25FE /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92899FC222CD85D000E25FE /* DBService.swift */; };
+		E96679F12234C27000BAC7C4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96679F02234C27000BAC7C4 /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,7 @@
 		E9289992222CCDD1000E25FE /* LJLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJLUITests.swift; sourceTree = "<group>"; };
 		E9289994222CCDD1000E25FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E92899BB222CD6A5000E25FE /* LJL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LJL-Bridging-Header.h"; sourceTree = "<group>"; };
-		E92899F0222CD85D000E25FE /* SearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		E92899F0222CD85D000E25FE /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E92899F2222CD85D000E25FE /* LJAnnotaionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJAnnotaionVM.swift; sourceTree = "<group>"; };
 		E92899F4222CD85D000E25FE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E92899F5222CD85D000E25FE /* Protocals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocals.swift; sourceTree = "<group>"; };
@@ -76,7 +77,8 @@
 		E92899F7222CD85D000E25FE /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		E92899FA222CD85D000E25FE /* AnnotationDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDBModel.swift; sourceTree = "<group>"; };
 		E92899FB222CD85D000E25FE /* LJObjDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJObjDBModel.swift; sourceTree = "<group>"; };
-		E92899FC222CD85D000E25FE /* SearchDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDB.swift; sourceTree = "<group>"; };
+		E92899FC222CD85D000E25FE /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		E96679F02234C27000BAC7C4 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		F4B21A063A45C2F505D9AC9E /* Pods_LJL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,9 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				E92899EE222CD85D000E25FE /* Code */,
-				E9289972222CCDCD000E25FE /* AppDelegate.swift */,
-				E9289974222CCDCD000E25FE /* ViewController.swift */,
-				E9289976222CCDCD000E25FE /* Main.storyboard */,
 				E9289979222CCDD0000E25FE /* Assets.xcassets */,
 				E928997B222CCDD0000E25FE /* LaunchScreen.storyboard */,
 				E928997E222CCDD0000E25FE /* Info.plist */,
@@ -193,6 +192,10 @@
 		E92899EE222CD85D000E25FE /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				E9289972222CCDCD000E25FE /* AppDelegate.swift */,
+				E9289974222CCDCD000E25FE /* ViewController.swift */,
+				E9289976222CCDCD000E25FE /* Main.storyboard */,
+				E96679F22234C27700BAC7C4 /* Tools */,
 				E904374C222D6C97005DC478 /* 定位API地图 */,
 				E92899F8222CD85D000E25FE /* 搜索DB地图 */,
 				E92899EF222CD85D000E25FE /* 搜索API地图 */,
@@ -205,7 +208,7 @@
 		E92899EF222CD85D000E25FE /* 搜索API地图 */ = {
 			isa = PBXGroup;
 			children = (
-				E92899F0222CD85D000E25FE /* SearchAPI.swift */,
+				E92899F0222CD85D000E25FE /* APIService.swift */,
 			);
 			path = "搜索API地图";
 			sourceTree = "<group>";
@@ -234,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				E92899F9222CD85D000E25FE /* DBModel */,
-				E92899FC222CD85D000E25FE /* SearchDB.swift */,
+				E92899FC222CD85D000E25FE /* DBService.swift */,
 			);
 			path = "搜索DB地图";
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 				E92899FB222CD85D000E25FE /* LJObjDBModel.swift */,
 			);
 			path = DBModel;
+			sourceTree = "<group>";
+		};
+		E96679F22234C27700BAC7C4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E96679F02234C27000BAC7C4 /* Tools.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,10 +420,11 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LJL/Pods-LJL-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LJL/Pods-LJL-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -422,11 +434,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LJL/Pods-LJL-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJL/Pods-LJL-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA6E71F35011D731A131C0C8 /* [CP] Copy Pods Resources */ = {
@@ -437,7 +450,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LJL/Pods-LJL-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LJL/Pods-LJL-resources.sh",
 				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -448,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LJL/Pods-LJL-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJL/Pods-LJL-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -463,12 +476,13 @@
 				E9289975222CCDCD000E25FE /* ViewController.swift in Sources */,
 				E9043750222D72E7005DC478 /* LocateViewController.swift in Sources */,
 				E9289973222CCDCD000E25FE /* AppDelegate.swift in Sources */,
-				E9289A05222CD85D000E25FE /* SearchDB.swift in Sources */,
+				E9289A05222CD85D000E25FE /* DBService.swift in Sources */,
 				E9289A02222CD85D000E25FE /* AddressTableViewController.swift in Sources */,
 				E92899FE222CD85D000E25FE /* LJAnnotaionVM.swift in Sources */,
-				E92899FD222CD85D000E25FE /* SearchAPI.swift in Sources */,
+				E92899FD222CD85D000E25FE /* APIService.swift in Sources */,
 				E9289A03222CD85D000E25FE /* AnnotationDBModel.swift in Sources */,
 				E9289A01222CD85D000E25FE /* MapViewController.swift in Sources */,
+				E96679F12234C27000BAC7C4 /* Tools.swift in Sources */,
 				E904374E222D6CBB005DC478 /* LocationManger.swift in Sources */,
 				E9289A04222CD85D000E25FE /* LJObjDBModel.swift in Sources */,
 			);
@@ -648,7 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 62N6ZZKK9A;
+				DEVELOPMENT_TEAM = U96AW6YSJK;
 				INFOPLIST_FILE = LJL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,7 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 62N6ZZKK9A;
+				DEVELOPMENT_TEAM = U96AW6YSJK;
 				INFOPLIST_FILE = LJL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

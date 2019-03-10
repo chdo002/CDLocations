@@ -12,7 +12,7 @@ target 'LJL' do
   pod 'AMapSearch'
   pod 'AMapLocation'
   
-  pod 'Realm', '3.13.1'
+  pod 'RealmSwift'
   
   pod 'Masonry', '1.1.0'
   

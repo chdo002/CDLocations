@@ -9,30 +9,29 @@
 import UIKit
 import SnapKit
 
-/// 搜索视图
-class SearchViewController: UIViewController, UITextFieldDelegate,MapActionProtocals {
+protocol SearchViewProtocal: MapActionProtocal {
     
-    // MARK: - MapActionProtocals
-    var selectLocationHandler: ((LJAnnotaionVM) -> Void)?
-    
+}
 
+/// 搜索视图
+class SearchViewController: UIViewController, UITextFieldDelegate, MapActionProtocal {
+    
+    // MARK: - MapActionProtocalsDelegate
+    var delegate: SearchViewProtocal?
+    
     let searchBar = UIView()
     let searchBut = UIButton()
     let textFiled = UITextField()
     
     let backTap = UITapGestureRecognizer()
-    lazy var search = SearchAPI()
+    lazy var search = APIService()
     
     lazy var backView = UIView(frame: UIScreen.main.bounds)
     lazy var tableVc = LocationTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initUI()
-        
-        setUpTapSearch()
-
     }
     
     // MARK: - backActions
@@ -67,14 +66,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate,MapActionProto
         closeBack()
     }
     
-    // MARK: - SearchActions
-    
-    func setUpTapSearch() {
-        tableVc.selectLocationHandler = { [weak self] (vm:LJAnnotaionVM) -> Void in
-            self?.selectLocationHandler?(vm)
-            self?.closeBack()
-        }
+    // MARK:- MapActionProtocal
+    func selectLocation(_ vm: LJAnnotaionVM, from: AnyObject) {
+        self.delegate?.selectLocation(vm, from: self)
+        self.closeBack()
     }
+    
+    // MARK: - SearchActions
     
     func searchPace(place string: String) {
         textFiled.resignFirstResponder()
@@ -89,10 +87,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate,MapActionProto
             return
         }
         backTap.isEnabled = false
-        searchBut.setImage(UIImage(named: "guanbi"), for: .normal)
+        searchBut.setImage(UIImage(named: "x"), for: .normal)
         self.parent?.addChild(tableVc)
         backView.addSubview(tableVc.view)
         tableVc.didMove(toParent: self)
+        tableVc.delegate = self
         tableVc.view.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(self.view)
             make.top.equalTo(searchBar.snp.bottom).offset(20)
@@ -153,18 +152,21 @@ class SearchViewController: UIViewController, UITextFieldDelegate,MapActionProto
         
         view.addSubview(searchBar)
         searchBar.snp.makeConstraints { (make) in
-            make.leading.top.equalTo(20)
+            make.top.equalToSuperview().offset(view.statusBarHeight + 10)
+            make.leading.equalTo(20)
             make.trailing.equalTo(-20)
             make.height.equalTo(50)
             make.bottom.equalTo(-20)
         }
         
         searchBut.setImage(UIImage(named: "search"), for: .normal)
+        searchBut.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         searchBut.addTarget(self, action: #selector(tapSearchBut), for: .touchUpInside)
         searchBut.imageView?.contentMode = .scaleAspectFit
         searchBar.addSubview(searchBut)
         searchBut.snp.makeConstraints { (make) in
-            make.top.trailing.bottom.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(10)
+            make.trailing.equalToSuperview()
             make.width.equalTo(searchBar.snp.height)
         }
         

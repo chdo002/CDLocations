@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
-class LJObjDBModel: RLMObject {
+class LJObjDBModel: Object {
     var info: String?
     var picData: Data?
 }

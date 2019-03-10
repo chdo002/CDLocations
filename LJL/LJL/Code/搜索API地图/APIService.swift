@@ -9,7 +9,7 @@
 import UIKit
 import AMapSearchKit
 
-class SearchAPI: NSObject, AMapSearchDelegate {
+class APIService: NSObject, AMapSearchDelegate {
     
     func search(place: String, complete results: @escaping ([LJAnnotaionVM]) -> Void ) {
         completeHandler = nil

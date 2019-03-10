@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol MapActionProtocals: NSObjectProtocol {
+protocol MapActionProtocal: NSObjectProtocol {
     
-    var selectLocationHandler: ( (LJAnnotaionVM) -> Void )? { get set }
+    func selectLocation(_ vm: LJAnnotaionVM, from: AnyObject)
     
 }

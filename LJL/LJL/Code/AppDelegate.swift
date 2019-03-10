@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func realmConfig() {
-        let config = RLMRealmConfiguration.default()
-        print("realm地址:\(config.fileURL!)")
-        RLMRealm.default()
+        
+        DBService.configDB()
+        
     }
 
 }

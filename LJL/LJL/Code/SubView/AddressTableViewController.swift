@@ -9,11 +9,11 @@
 import UIKit
 
 /// 地点展示table
-class LocationTableViewController: UITableViewController,MapActionProtocals {
+class LocationTableViewController: UITableViewController {
 
     var locations = [LJAnnotaionVM]()
     
-    var selectLocationHandler: ( (LJAnnotaionVM) -> Void )?
+    var delegate: MapActionProtocal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,6 @@ class LocationTableViewController: UITableViewController,MapActionProtocals {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vm = locations[indexPath.row]
-        selectLocationHandler?(vm)
+        delegate?.selectLocation(vm, from: self)
     }
 }
